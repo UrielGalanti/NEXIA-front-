@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './sideBar.css';
+import './sidebar.css';
+// Importamos el logo desde assets
+import logoEscuela from '../../../assets/Logo.png';
 
 const Sidebar = () => {
   // Estado para el menú móvil
@@ -8,7 +10,7 @@ const Sidebar = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
 
   useEffect(() => {
-    // Detección automática del path activo basándose en la URL
+    // Detección automática del path activo
     const path = window.location.pathname.split('/').pop().replace('.html', '') || 'inicio';
     setCurrentPage(path);
   }, []);
@@ -18,17 +20,26 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Botón hamburguesa para mobile */}
+      {/* Botón Toggle: Cambia de ícono y posición según el estado isOpen */}
       <button 
-        className="sidebar-toggle" 
+        className={`sidebar-toggle ${isOpen ? 'is-open' : ''}`} 
         onClick={toggleSidebar} 
-        aria-label="Abrir menú"
+        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg>
+        {isOpen ? (
+          // SVG del ícono "X" (Cerrar)
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        ) : (
+          // SVG del menú Hamburguesa
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        )}
       </button>
 
       {/* Overlay para mobile */}
@@ -41,8 +52,8 @@ const Sidebar = () => {
       <aside className={`sidebar ${isOpen ? 'open' : ''}`} id="sidebar">
         {/* Logo Institucional */}
         <div className="sidebar-logo">
-          <a href="/inicio.html">
-            <img src="Imágenes/Logo.png" alt="Logo Escuela" />
+          <a href="/inicio">
+            <img src={logoEscuela} alt="Logo Escuela" />
           </a>
         </div>
 
@@ -50,10 +61,7 @@ const Sidebar = () => {
         <nav className="sidebar-nav">
           <ul className="nav-list">
             <li className="nav-item">
-              <a 
-                href="/inicio.html" 
-                className={`nav-link ${currentPage === 'inicio' ? 'active' : ''}`}
-              >
+              <a href="/inicio.html" className={`nav-link ${currentPage === 'inicio' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -64,10 +72,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/mis-materias.html" 
-                className={`nav-link ${currentPage === 'mis-materias' ? 'active' : ''}`}
-              >
+              <a href="/mis-materias.html" className={`nav-link ${currentPage === 'mis-materias' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -78,10 +83,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/calendario.html" 
-                className={`nav-link ${currentPage === 'calendario' ? 'active' : ''}`}
-              >
+              <a href="/calendario.html" className={`nav-link ${currentPage === 'calendario' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -94,10 +96,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/mensajes.html" 
-                className={`nav-link ${currentPage === 'mensajes' ? 'active' : ''}`}
-              >
+              <a href="/mensajes.html" className={`nav-link ${currentPage === 'mensajes' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -108,10 +107,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/comunicados.html" 
-                className={`nav-link ${currentPage === 'comunicados' ? 'active' : ''}`}
-              >
+              <a href="/comunicados.html" className={`nav-link ${currentPage === 'comunicados' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -124,10 +120,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/nexia-ia.html" 
-                className={`nav-link ${currentPage === 'nexia-ia' ? 'active' : ''}`}
-              >
+              <a href="/nexia-ia.html" className={`nav-link ${currentPage === 'nexia-ia' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -138,10 +131,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/mi-boletin.html" 
-                className={`nav-link ${currentPage === 'mi-boletin' ? 'active' : ''}`}
-              >
+              <a href="/mi-boletin.html" className={`nav-link ${currentPage === 'mi-boletin' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -155,10 +145,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/apuntes.html" 
-                className={`nav-link ${currentPage === 'apuntes' ? 'active' : ''}`}
-              >
+              <a href="/apuntes.html" className={`nav-link ${currentPage === 'apuntes' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
@@ -169,10 +156,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a 
-                href="/configuracion.html" 
-                className={`nav-link ${currentPage === 'configuracion' ? 'active' : ''}`}
-              >
+              <a href="/configuracion.html" className={`nav-link ${currentPage === 'configuracion' ? 'active' : ''}`}>
                 <span className="nav-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="12" cy="12" r="3" />
