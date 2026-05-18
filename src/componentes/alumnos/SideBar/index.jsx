@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './sidebarEst.css';
+import './sideBar.css';
 
 const Sidebar = () => {
   // Estado para el menú móvil

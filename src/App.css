@@ -1,0 +1,81 @@
+/* ============================================
+   VARIABLES GLOBALES
+   ============================================ */
+:root {
+  --bg-neutral: #F5F5F5;
+  /* Definimos el ancho del sidebar a nivel global para que el layout lo reconozca */
+  --sidebar-width: 260px; 
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--bg-neutral);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================
+   ESTRUCTURA PRINCIPAL (LAYOUT)
+   ============================================ */
+.main-wrapper {
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  /* Fuerza al contenido a ocupar toda la altura del viewport,
+     empujando al footer fuera de la vista inicial */
+  min-height: 100vh; 
+  padding: 2rem 3rem;
+  background-color: var(--bg-neutral);
+}
+
+.main-content h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.main-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE DEL LAYOUT PRINCIPAL
+   ============================================ */
+@media (max-width: 768px) {
+  .main-wrapper {
+    margin-left: 0;
+  }
+  .main-content {
+    padding: 5rem 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+  .main-content {
+    padding: 1.5rem;
+  }
+}
