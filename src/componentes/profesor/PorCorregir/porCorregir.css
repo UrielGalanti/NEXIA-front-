@@ -1,0 +1,17 @@
+.titulo {
+  display: block;
+  font-weight: bold;
+  color: #374151; /* gris oscuro */
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.valor {
+  display: inline-block;
+  background-color: #fef3c7; /* naranja suave */
+  color: #b45309; /* naranja más fuerte */
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 16px;
+}
