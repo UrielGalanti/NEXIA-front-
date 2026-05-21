@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router";
 import './App.css'
 import Sidebar from './componentes/alumnos/SideBar'
 import Footer from './componentes/footer'
-import MisMaterias from './componentes/profesor/paginas/MisMaterias/MisMaterias'
+import MisMaterias from './Paginas/Profesor/MisMaterias'
 
 function App() {
   const [count, setCount] = useState(0)
+  
 
   return (
     <>
       <Sidebar/>
-      <MisMaterias/>
       <Footer/>
     </>
   )

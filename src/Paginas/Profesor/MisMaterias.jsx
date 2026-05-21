@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import Materia from '../../Materia'
+import Materia from '../../componentes/profesor/Materia'
+import Sidebar from '../../componentes/alumnos/SideBar'
+import Footer from '../../componentes/footer'
 
 function MisMaterias() {
   const [materias, setMaterias] = useState([
@@ -36,6 +38,8 @@ function MisMaterias() {
   ])
   return (
     <>
+    <Sidebar/>
+      
        {materias.map((item) => (
         <Materia
           key={item.id}
@@ -44,6 +48,7 @@ function MisMaterias() {
           aCorregir={item.aCorregir}
         />
       ))}
+    <Footer/>
     </>
   )
 }
