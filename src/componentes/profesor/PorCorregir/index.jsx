@@ -1,6 +1,6 @@
 
 import React from "react";
-import 'porCorregir.css';
+import './porCorregir.css';
 
 const PorCorregir = ({aCorregir}) => {
   return (

@@ -1,10 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-import Sidebar from './componentes/alumnos/SideBar'
-import Footer from './componentes/footer'
+import Materia from '../../Materia'
 
 function MisMaterias() {
   const [materias, setMaterias] = useState([
@@ -41,7 +36,6 @@ function MisMaterias() {
   ])
   return (
     <>
-      <Sidebar/>
        {materias.map((item) => (
         <Materia
           key={item.id}
@@ -50,7 +44,6 @@ function MisMaterias() {
           aCorregir={item.aCorregir}
         />
       ))}
-      <Footer/>
     </>
   )
 }

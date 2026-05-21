@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Sidebar from './componentes/alumnos/SideBar'
 import Footer from './componentes/footer'
+import MisMaterias from './componentes/profesor/paginas/MisMaterias/MisMaterias'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Sidebar/>
+      <MisMaterias/>
       <Footer/>
     </>
   )
