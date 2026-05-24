@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
-import MisMaterias from "./Paginas/Profesor/MisMaterias";
+import MisMaterias from "./Paginas/Profesores/MisMaterias";
 
 const root = document.getElementById("root");
 

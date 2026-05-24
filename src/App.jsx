@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import './App.css'
 import Sidebar from './componentes/alumnos/SideBar'
 import Footer from './componentes/footer'
-import MisMaterias from './Paginas/Profesor/MisMaterias'
+import MisMaterias from './Paginas/Profesores/MisMaterias'
 
 function App() {
   const [count, setCount] = useState(0)
