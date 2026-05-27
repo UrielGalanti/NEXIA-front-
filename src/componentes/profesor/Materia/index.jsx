@@ -6,9 +6,6 @@ const Materia = ({ materia, grado, aCorregir }) => {
   return (
     <div className="card">
         <h2>{materia} {grado}</h2>
-      <section className="cardBody">
-        <PorCorregir aCorregir={aCorregir}/>
-      </section>
     </div>
   );
 };

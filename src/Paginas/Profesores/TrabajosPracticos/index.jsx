@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import Materia from '../../../componentes/profesor/Materia'
 import Sidebar from '../../../componentes/alumnos/SideBar'
 import Footer from '../../../componentes/footer'
-import TrabajoPractico from '../../../componentes/profesor/TrabajoPractico'
-import './misCursos.css'
+import Contenido from '../../../componentes/profesor/Contenido'
 
 function MisCursos() {
   const [trabajos, setTrabajos] = useState([
@@ -15,7 +13,7 @@ function MisCursos() {
         <h1>Mis Cursos</h1>
           <div className="materias-grid">
           {trabajos.map((item) => (
-            <TrabajoPractico titulo={item.titulo} unidad={item.unidad}
+            <Contenido titulo={item.titulo} descripcion={item.descripcion} tipo={item.tipo}
             />
           ))}
       </div>

@@ -1,14 +1,15 @@
 import React from "react";
 import PorCorregir from "../PorCorregir";
-import './materia.css';
 
-const Materia = ({titulo,unidad }) => {
+const Contenido = ({titulo,descripcion,tipo}) => {
   return (
     <div className="card">
-        {unidad}
+        
         <h2>{titulo}</h2>
+        <h3>{tipo}</h3>
+        <p>{descripcion}</p>
     </div>
   );
 };
 
-export default Materia;
+export default Contenido;

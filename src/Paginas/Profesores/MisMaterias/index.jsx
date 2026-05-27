@@ -10,31 +10,26 @@ function MisCursos() {
     id: 1,
     materia: "Matemáticas",
     grado: "5°A",
-    aCorregir: 5
   },
   {
     id: 2,
     materia: "Lengua",
     grado: "5°A",
-    aCorregir: 3
   },
   {
     id: 3,
     materia: "Ciencias Naturales",
     grado: "5°A",
-    aCorregir: 4
   },
   {
     id: 4,
     materia: "Historia",
     grado: "5°A",
-    aCorregir: 2
   },
   {
     id: 5,
     materia: "Geografía",
     grado: "5°A",
-    aCorregir: 6
   }
   ])
   return (
@@ -48,7 +43,6 @@ function MisCursos() {
               key={item.id}
               materia={item.materia}
               grado={item.grado}
-              aCorregir={item.aCorregir}
             />
           ))}
       </div>
